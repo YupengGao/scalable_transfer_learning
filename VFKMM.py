@@ -41,7 +41,8 @@ def kmmProcess():
     # Bagging the train and test data from the sampled index
     tr_bag_size, tr_bag_no = get_size_no(train_data, tr_bsize, m)
     te_bag_size, te_bag_no = get_size_no(test_data, te_bsize, n)
-    
+    # bag is the function that put random index of data into the bag
+    # partition is the function that can set part the index of data equally, the size of partition is equal to bag size
     if mode == 1:  # if test is too big, provide x or n to partition test set
         tr_n = bag(train_data, size=tr_bag_size, sample_no=tr_bag_no)
         te_n = partition(test_data, part_size=te_bag_size, part_no=te_bag_no)
