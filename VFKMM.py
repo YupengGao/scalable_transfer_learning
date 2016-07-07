@@ -54,8 +54,11 @@ def kmmProcess():
         te_n = bag(test_data, size=te_bag_size, sample_no=te_bag_no)
 
     if mode < 4:
+        # cartisian is to pair each training data and test data put into bag
         bags = cartesian(train_data, test_data, tr_n, te_n)
     else:
+        # pair can be used to pair given number pair of train and test data by picking randomly in the pool
+        # one tuple of train data pair with one tuple of test data
         bags = pair(train_data, test_data, tr_n, te_n, sample_no=min(tr_bag_no, te_bag_no))
 
     rdd = sc.parallelize(bags)
