@@ -1,0 +1,1 @@
+./spark-submit /home/wzyCode/scalable_transfer_learning/run.py -b 1 -t 29000 -m 20
